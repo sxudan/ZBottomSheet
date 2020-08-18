@@ -27,3 +27,11 @@ sxudan, sudan.suwal@spiralogics.com
 ## License
 
 ZBottomSheet is available under the MIT license. See the LICENSE file for more info.
+
+## Usage
+
+`let bottomSheet = ZBottomSheet(parent: self, childController: vc)`
+
+`bottomSheet.options = SheetOptions(headerTitle: "", contentHeight: .adjustWithTableviewContent, handleBarColor: .systemBlue, panelColor: .white, separatorColor: UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1))`
+
+`bottomSheet.showSheet()`
