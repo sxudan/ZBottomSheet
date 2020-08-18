@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BottomSheet_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ZBottomSheet_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -24,7 +24,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hB-3o-R3E">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="30"/>
-                                        <state key="normal" title="Show Bottom Sheet (Tableview Content Height)"/>
+                                        <state key="normal" title="Show Bottom Sheet (Child Tableview Height)"/>
                                         <connections>
                                             <action selector="onShow1:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0U4-GW-of4"/>
                                         </connections>
@@ -61,7 +61,7 @@
         <!--Menu View Controller-->
         <scene sceneID="XvJ-Jv-BFB">
             <objects>
-                <viewController storyboardIdentifier="MenuViewController" id="K1h-u0-2oI" customClass="MenuViewController" customModule="BottomSheet_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="K1h-u0-2oI" customClass="MenuViewController" customModule="ZBottomSheet_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c9Y-oI-oKH"/>
                         <viewControllerLayoutGuide type="bottom" id="iFa-we-pqf"/>
