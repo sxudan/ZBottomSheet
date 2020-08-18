@@ -31,7 +31,7 @@
 /* Begin PBXFileReference section */
 		23ED71832EF97206ED60E959 /* Pods_ZBottomSheet_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZBottomSheet_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F903F02F8240068950FCB5 /* Pods-ZBottomSheet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZBottomSheet_Example.debug.xcconfig"; path = "Target Support Files/Pods-ZBottomSheet_Example/Pods-ZBottomSheet_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		4CFA1D6EFD50FDDEDCAB83FD /* ZBottomSheet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZBottomSheet.podspec; path = ../ZBottomSheet.podspec; sourceTree = "<group>"; };
+		4CFA1D6EFD50FDDEDCAB83FD /* ZBottomSheet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZBottomSheet.podspec; path = ../ZBottomSheet.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACD01AFB9204008FA782 /* ZBottomSheet_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZBottomSheet_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
