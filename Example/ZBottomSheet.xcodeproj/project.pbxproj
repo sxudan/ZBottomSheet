@@ -14,7 +14,7 @@
 		7CB337B48A0D4987C352C41D /* Pods_ZBottomSheet_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EA154F68939171EC00A47E /* Pods_ZBottomSheet_Example.framework */; };
 		CEB5BF7D24EBDC8C009F66CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5BF7B24EBDC8C009F66CD /* ViewController.swift */; };
 		CEB5BF7E24EBDC8C009F66CD /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5BF7C24EBDC8C009F66CD /* MenuViewController.swift */; };
-		CEB5BF8B24EBDF96009F66CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB5BF8924EBDF96009F66CD /* Main.storyboard */; };
+		CEB5BF8F24EBEE35009F66CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB5BF8D24EBEE35009F66CD /* Main.storyboard */; };
 		FB1A6C17B4C45D217E2697FB /* Pods_ZBottomSheet_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23ED71832EF97206ED60E959 /* Pods_ZBottomSheet_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +45,7 @@
 		BCDE492291710005D5FBCEA0 /* Pods-ZBottomSheet_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZBottomSheet_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ZBottomSheet_Tests/Pods-ZBottomSheet_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CEB5BF7B24EBDC8C009F66CD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEB5BF7C24EBDC8C009F66CD /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		CEB5BF8A24EBDF96009F66CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEB5BF8E24EBEE35009F66CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD501CE8741CF42BF8457599 /* Pods-ZBottomSheet_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZBottomSheet_Tests.release.xcconfig"; path = "Target Support Files/Pods-ZBottomSheet_Tests/Pods-ZBottomSheet_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E3266A2DE997F4031BA077F8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E4EA154F68939171EC00A47E /* Pods_ZBottomSheet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZBottomSheet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,7 +104,7 @@
 		607FACD21AFB9204008FA782 /* Example for ZBottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				CEB5BF8924EBDF96009F66CD /* Main.storyboard */,
+				CEB5BF8D24EBEE35009F66CD /* Main.storyboard */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				CEB5BF7C24EBDC8C009F66CD /* MenuViewController.swift */,
 				CEB5BF7B24EBDC8C009F66CD /* ViewController.swift */,
@@ -250,7 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEB5BF8B24EBDF96009F66CD /* Main.storyboard in Resources */,
+				CEB5BF8F24EBEE35009F66CD /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -368,10 +368,10 @@
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
-		CEB5BF8924EBDF96009F66CD /* Main.storyboard */ = {
+		CEB5BF8D24EBEE35009F66CD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CEB5BF8A24EBDF96009F66CD /* Base */,
+				CEB5BF8E24EBEE35009F66CD /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
