@@ -29,8 +29,8 @@ sxudan, sudan.suwal@spiralogics.com
 ZBottomSheet is available under the MIT license. See the LICENSE file for more info.
 
 ## Screenshots
-![image1](https://user-images.githubusercontent.com/31989781/90506175-91185100-e173-11ea-931a-e8b4c19f53b1.png)
-![image2](https://user-images.githubusercontent.com/31989781/90506183-94134180-e173-11ea-8670-66f648087598.png)
+<img src="https://user-images.githubusercontent.com/31989781/90506175-91185100-e173-11ea-931a-e8b4c19f53b1.png" alt="drawing" width="200"/>
+<img src="https://user-images.githubusercontent.com/31989781/90506183-94134180-e173-11ea-8670-66f648087598.png" alt="drawing" width="200"/>
 
 ## Usage
 
