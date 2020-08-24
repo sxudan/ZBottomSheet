@@ -31,13 +31,13 @@ ZBottomSheet is available under the MIT license. See the LICENSE file for more i
 ## Demo
 </br>
 <b> Type: Controller </b>
-</br>
+</br></br>
 <img src="https://user-images.githubusercontent.com/31989781/91003183-62293180-e5f0-11ea-8e4c-7379e0db3223.gif" width="320" > 
 </br>
 <img src="https://user-images.githubusercontent.com/31989781/91004110-fdbba180-e5f2-11ea-8b3a-5b1ad3478952.gif" width="320" > 
-</br></br>
+</br></br></br>
 <b> Type: View </b>
-</br>
+</br></br>
 <img src="https://user-images.githubusercontent.com/31989781/91003842-2d1dde80-e5f2-11ea-9822-5f1fdc2bff50.gif" width="320" > 
 </br></br>
 
@@ -51,6 +51,10 @@ ZBottomSheet is available under the MIT license. See the LICENSE file for more i
 </br></br>
 <b>View</b> </br>
 ```let sheetView = ZBottomSheet.View(parent: self) ```
+</br>
+```sheetView.addNavigationBar() { navigationBar in ```
+           ``` return 70 //Height of bar ```
+   ```     } ```
 </br>
 ```sheetView.showSheet() ```
 
@@ -81,4 +85,3 @@ ZBottomSheet is available under the MIT license. See the LICENSE file for more i
 </br>
 
 </br></br></br>
-<a href="" >Please refer to the examples and feel free to email me.....</a>
