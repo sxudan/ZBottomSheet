@@ -19,26 +19,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ikj-ZZ-AKf">
-                                <rect key="frame" x="24" y="32" width="327" height="122"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ikj-ZZ-AKf">
+                                <rect key="frame" x="24" y="32" width="327" height="167"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hB-3o-R3E">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="30"/>
-                                        <state key="normal" title="Show Bottom Sheet (Child Tableview Height)"/>
-                                        <connections>
-                                            <action selector="onShow1:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0U4-GW-of4"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atG-0K-mYo">
-                                        <rect key="frame" x="0.0" y="46" width="327" height="30"/>
-                                        <state key="normal" title="Show Bottom Sheet (Half Screen)"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="nlW-ap-qnA"/>
+                                        </constraints>
+                                        <state key="normal" title="Simple Sheet">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="onShow2:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eff-J3-Fjg"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hB-3o-R3E">
+                                        <rect key="frame" x="0.0" y="61" width="327" height="45"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Apple Map Bottom Sheet">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onShow1:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0U4-GW-of4"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3m-Jj-QQf">
-                                        <rect key="frame" x="0.0" y="92" width="327" height="30"/>
-                                        <state key="normal" title="Show Bottom Sheet (Full Screen)"/>
+                                        <rect key="frame" x="0.0" y="122" width="327" height="45"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Collection View">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="onShow3:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ruy-ea-ASZ"/>
                                         </connections>
@@ -46,7 +58,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ikj-ZZ-AKf" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="32" id="MSV-Xj-SKB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ikj-ZZ-AKf" secondAttribute="trailing" constant="8" id="clO-zy-kJB"/>

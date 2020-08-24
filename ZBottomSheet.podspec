@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZBottomSheet'
-  s.version          = '0.1.0'
-  s.summary          = 'BottomSheet is simple to use bottom sheet where you can attach view controllers into it.'
+  s.version          = '0.2.0'
+  s.summary          = 'BottomSheet is simple to use bottom sheet for iOS.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-'BottomSheet is simple to use bottom sheet where you can attach view controllers into it.'
+'BottomSheet is simple to use bottom sheet where you can attach navigation bar, uiview, table view and collection view on it.'
                        DESC
 
   s.homepage         = 'https://github.com/sxudan/ZBottomSheet'
