@@ -20,6 +20,7 @@ public class ChildViewController: UIViewController {
         sheetView.presentView(parent: self)
     }
     
+    //add background layer
     func setupBackgroundView() {
         background = UIView(frame: self.view.frame)
         self.view.addSubview(background)

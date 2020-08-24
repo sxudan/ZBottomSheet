@@ -7,12 +7,10 @@
 
 import UIKit
 
-
 public class UISheetView: UIView, BottomSheetModel {
     
     
     //MARK: Properties
-    
     public var enableClipToBar: Bool = false
     public var isClosable: Bool = true
     var type: SheetType = .Controller
@@ -204,6 +202,7 @@ public class UISheetView: UIView, BottomSheetModel {
         
     }
     
+    // add collection view 
     public func addCollectionView(flowLayout: UICollectionViewFlowLayout? = nil , _ collectionViewHandler: (UICollectionView, UIScrollView) -> Void) {
         addScrollView({scrollview in
             let stackView = UIStackView()
