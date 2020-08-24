@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ChildViewController: UIViewController {
+public class ChildViewController: UIViewController {
     
     var sheetView: UISheetView!
     var background: UIView!
     var tapGesture: UITapGestureRecognizer!
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setupBackgroundView()
         setupGesture()

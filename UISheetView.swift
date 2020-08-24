@@ -8,18 +8,18 @@
 import UIKit
 
 
-class UISheetView: UIView, BottomSheetModel {
+public class UISheetView: UIView, BottomSheetModel {
     
     
     //MARK: Properties
     
-    var enableClipToBar: Bool = false
-    var isClosable: Bool = true
+    public var enableClipToBar: Bool = false
+    public var isClosable: Bool = true
     var type: SheetType = .Controller
     var navigationBarOffset: CGFloat = 12
-    var isExpandableToFullHeight: Bool! = false
+    public var isExpandableToFullHeight: Bool! = false
     var placementView: UIView!
-    var initialHeight: CGFloat = 45
+    public var initialHeight: CGFloat = 45
     private var navigationBar: UINavigationBar?
     private var tableView: UITableView?
     private var scrollView: UIScrollView?
@@ -44,7 +44,7 @@ class UISheetView: UIView, BottomSheetModel {
     private var parentViewController: UIViewController!
     
     //MARK: STATE OF BOTTOM SHEET
-    var state: State! = .Hidden {
+    public var state: State! = .Hidden {
         didSet {
             scrollView?.isScrollEnabled = false
             let minimumHeight = CGFloat(initialHeight)
@@ -105,7 +105,7 @@ class UISheetView: UIView, BottomSheetModel {
         self.removeFromSuperview()
     }
     
-    func addNavigationBar(_ navigationBarHandler: (UINavigationBar) -> CGFloat) {
+    public func addNavigationBar(_ navigationBarHandler: (UINavigationBar) -> CGFloat) {
         let bar = UINavigationBar()
         self.placementView.addSubview(bar)
         bar.translatesAutoresizingMaskIntoConstraints = false
@@ -159,7 +159,7 @@ class UISheetView: UIView, BottomSheetModel {
         self.layoutIfNeeded()
     }
     
-    func addScrollView(_ scrollViewHandler: (UIScrollView) -> Void) {
+    public func addScrollView(_ scrollViewHandler: (UIScrollView) -> Void) {
         self.clearAll()
         let scrollview = UIScrollView(frame: .zero)
         scrollview.restorationIdentifier = "scrollview"
@@ -204,7 +204,7 @@ class UISheetView: UIView, BottomSheetModel {
         
     }
     
-    func addCollectionView(flowLayout: UICollectionViewFlowLayout? = nil , _ collectionViewHandler: (UICollectionView, UIScrollView) -> Void) {
+    public func addCollectionView(flowLayout: UICollectionViewFlowLayout? = nil , _ collectionViewHandler: (UICollectionView, UIScrollView) -> Void) {
         addScrollView({scrollview in
             let stackView = UIStackView()
             stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -297,7 +297,7 @@ class UISheetView: UIView, BottomSheetModel {
         })
     }
     
-    func addTableView(_ tableViewHandler: (UITableView, UIScrollView) -> Void) {
+    public func addTableView(_ tableViewHandler: (UITableView, UIScrollView) -> Void) {
         addScrollView({scrollview in
             let stackView = UIStackView()
             stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -388,12 +388,12 @@ class UISheetView: UIView, BottomSheetModel {
         self.layoutIfNeeded()
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
     }
     
     
-    func addContentView(_ contentViewHandler: @escaping (UIView) -> Void) {
+    public func addContentView(_ contentViewHandler: @escaping (UIView) -> Void) {
         
         self.clearAll()
         
@@ -446,7 +446,7 @@ class UISheetView: UIView, BottomSheetModel {
         
     }
     
-    func addBottomSheetView(view: UIView, presentedView viewHandler: (UIView) -> Void) {
+    public func addBottomSheetView(view: UIView, presentedView viewHandler: (UIView) -> Void) {
         
         let placementView = view
         self.addSubview(placementView)
@@ -593,7 +593,7 @@ class UISheetView: UIView, BottomSheetModel {
 
 //MARK: SCROLL VIEW DELEGATE
 extension UISheetView: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let trans = bottomSheetHeightConstraint.constant + scrollView.contentOffset.y
         if trans < self.maxHeight {
             let vel = scrollView.panGestureRecognizer.velocity(in: scrollView)
@@ -610,14 +610,14 @@ extension UISheetView: UIScrollViewDelegate {
         
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if bottomSheetHeightConstraint.constant != self.maxHeight && bottomSheetHeightConstraint.constant != initialHeight {
             self.panSheet(offset: -scrollView.contentOffset.y)
         }
         
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if bottomSheetHeightConstraint.constant != self.maxHeight && bottomSheetHeightConstraint.constant != initialHeight {
             self.panSheet(offset: -scrollView.contentOffset.y)
         }
