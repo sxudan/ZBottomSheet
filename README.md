@@ -28,16 +28,57 @@ sxudan, sudan.suwal@spiralogics.com
 
 ZBottomSheet is available under the MIT license. See the LICENSE file for more info.
 
-## Screenshots
-<img src="https://user-images.githubusercontent.com/31989781/90506175-91185100-e173-11ea-931a-e8b4c19f53b1.png" alt="drawing" width="200"/>
-<img src="https://user-images.githubusercontent.com/31989781/90506183-94134180-e173-11ea-8670-66f648087598.png" alt="drawing" width="200"/>
+## Demo
+</br>
+<b> Type: Controller </b>
+</br>
+<img src="https://user-images.githubusercontent.com/31989781/91003183-62293180-e5f0-11ea-8e4c-7379e0db3223.gif" width="320" > 
+</br>
+<img src="https://user-images.githubusercontent.com/31989781/91004110-fdbba180-e5f2-11ea-8b3a-5b1ad3478952.gif" width="320" > 
+</br></br>
+<b> Type: View </b>
+</br>
+<img src="https://user-images.githubusercontent.com/31989781/91003842-2d1dde80-e5f2-11ea-9822-5f1fdc2bff50.gif" width="320" > 
+</br></br>
+
 
 ## Usage
 
-`let childVC = ...`
+<b>Controller</b> </br>
+```let controller = ZBottomSheet.Controller(parent: self) ```
+</br>
+```controller.showSheet() ```
+</br></br>
+<b>View</b> </br>
+```let sheetView = ZBottomSheet.View(parent: self) ```
+</br>
+```sheetView.showSheet() ```
 
-`let bottomSheet = ZBottomSheet(parent: self, childController: childVC)`
+</br></br>
+<b>Properties</b>
+</br>
+`var isClosable: Bool { get set }`
+</br>
+`var enableClipToBar: Bool { get set }`
+</br>
+`var initialHeight: CGFloat { get set }`
+</br>
+`var isExpandableToFullHeight: Bool! { get set }`
+</br>
+`func addNavigationBar(_ navigationBarHandler: @escaping (UINavigationBar) -> CGFloat)`
+</br>
+`func addTableView(_ tableViewHandler: @escaping (UITableView, UIScrollView) -> Void)`
+</br>
+`func addCollectionView(flowLayout: UICollectionViewFlowLayout?,_ collectionViewHandler: @escaping (UICollectionView, UIScrollView) -> Void)`
+</br>
+`func addBottomSheetView(view: UIView, presentedView viewHandler: @escaping (UIView) -> Void)`
+</br>
+`func addScrollView(_ scrollViewHandler: @escaping (UIScrollView) -> Void)`
+</br>
+`func addContentView(_ contentViewHandler: @escaping (UIView) -> Void)`
+</br>
+`var state: State! { get set }`
+</br>
 
-`bottomSheet.options = SheetOptions(headerTitle: "", contentHeight: .adjustWithTableviewContent, handleBarColor: .systemBlue, panelColor: .white, separatorColor: UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1))`
-
-`bottomSheet.showSheet()`
+</br></br></br>
+<a href="" >Please refer to the examples and feel free to email me.....</a>
