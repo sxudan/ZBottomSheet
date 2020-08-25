@@ -14,7 +14,7 @@ public class UISheetView: UIView, BottomSheetModel {
     public var enableClipToBar: Bool = false
     public var isClosable: Bool = true
     var type: SheetType = .Controller
-    var navigationBarOffset: CGFloat = 12
+    var navigationBarOffset: CGFloat = 0
     public var isExpandableToFullHeight: Bool! = false
     var placementView: UIView!
     public var initialHeight: CGFloat = 45
@@ -32,7 +32,7 @@ public class UISheetView: UIView, BottomSheetModel {
     fileprivate lazy var getNavigationBarHeight: CGFloat = {
         return UINavigationBar().intrinsicContentSize.height
     }()
-    var navigationBarHeight: CGFloat!
+    var navigationBarHeight: CGFloat = 45
     var tapGesture: UITapGestureRecognizer!
     var dragGesture: UIPanGestureRecognizer!
     var delegate: BottomSheetDelegate?
@@ -40,6 +40,7 @@ public class UISheetView: UIView, BottomSheetModel {
     var collectionViewHeightConstraint: NSLayoutConstraint?
     var bottomSheetHeightConstraint: NSLayoutConstraint!
     private var parentViewController: UIViewController!
+    
     
     //MARK: STATE OF BOTTOM SHEET
     public var state: State! = .Hidden {
@@ -62,7 +63,7 @@ public class UISheetView: UIView, BottomSheetModel {
                 }
                 self.layoutIfNeeded()
             case .Hidden:
-                self.bottomSheetHeightConstraint.constant = 45
+                self.bottomSheetHeightConstraint.constant = navigationBarHeight + navigationBarOffset
                 UIView.animate(withDuration: 0.3, animations: {
                     self.layoutIfNeeded()
                 })
@@ -103,7 +104,9 @@ public class UISheetView: UIView, BottomSheetModel {
         self.removeFromSuperview()
     }
     
+    
     public func addNavigationBar(_ navigationBarHandler: (UINavigationBar) -> CGFloat) {
+
         let bar = UINavigationBar()
         self.placementView.addSubview(bar)
         bar.translatesAutoresizingMaskIntoConstraints = false
@@ -140,9 +143,16 @@ public class UISheetView: UIView, BottomSheetModel {
                                                   multiplier: 1,
                                                   constant: navigationBarHeight)
         
-        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint, heightConstraint])
         self.navigationBarHeight = navigationBarHandler(bar)
+        
+        navigationBar?.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.navigationBarHeight)
+        
+        heightConstraint.constant = self.navigationBarHeight
+        
+        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint, heightConstraint])
+        
         self.navigationBar = bar
+        
         self.layoutIfNeeded()
     }
     
@@ -270,7 +280,7 @@ public class UISheetView: UIView, BottomSheetModel {
             self.layoutIfNeeded()
             
             let height = collectionview.collectionViewLayout.collectionViewContentSize.height + collectionview.contentInset.top + collectionview.contentInset.bottom
-            if initialHeight == CGFloat.adjustWithTableviewContent {
+            if initialHeight == CGFloat.adjustWithContent {
                 
                 self.initialHeight = height + self.navigationBarHeight + (2 * self.navigationBarOffset)
                 self.collectionViewHeightConstraint?.constant = height
@@ -356,7 +366,7 @@ public class UISheetView: UIView, BottomSheetModel {
             tableview.reloadData()
             self.layoutIfNeeded()
             
-            if initialHeight == CGFloat.adjustWithTableviewContent {
+            if initialHeight == CGFloat.adjustWithContent {
                 self.initialHeight = tableview.contentSize.height + self.navigationBarHeight + (2 * self.navigationBarOffset)
                 self.tableViewHeightConstraint?.constant = tableview.contentSize.height
                 self.bottomSheetHeightConstraint.constant = self.initialHeight
@@ -375,7 +385,11 @@ public class UISheetView: UIView, BottomSheetModel {
         parentViewController.view.addSubview(self)
         self.backgroundColor = .clear
         self.translatesAutoresizingMaskIntoConstraints = false
-        bottomSheetHeightConstraint = self.heightAnchor.constraint(equalToConstant: self.initialHeight)
+        if initialHeight == .adjustWithContent {
+            bottomSheetHeightConstraint = self.heightAnchor.constraint(equalToConstant: 100)
+        } else {
+            bottomSheetHeightConstraint = self.heightAnchor.constraint(equalToConstant: self.initialHeight)
+        }
         bottomSheetHeightConstraint.isActive = true
         
         self.bottomAnchor.constraint(equalTo: parentViewController.view.bottomAnchor).isActive = true
@@ -491,6 +505,15 @@ public class UISheetView: UIView, BottomSheetModel {
         self.addGestureRecognizer(dragGesture)
         
         viewHandler(self)
+        
+        let bounds = self.bounds as CGRect?
+        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        visualEffectView.backgroundColor = UIColor.lightGray.withAlphaComponent(0)
+        visualEffectView.frame = bounds!
+        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        self.insertSubview(visualEffectView, at: 0)
+        
         self.placementView = placementView
     }
     

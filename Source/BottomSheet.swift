@@ -16,7 +16,7 @@ public protocol BottomSheetDelegate {
 extension CGFloat {
     public static let fullscreen: CGFloat = -2
     public static let halfscreen: CGFloat = -1
-    public static let adjustWithTableviewContent: CGFloat = -3
+    public static let adjustWithContent: CGFloat = -3
 }
 
 public enum State {
@@ -39,6 +39,7 @@ public protocol BottomSheetModel {
     func addContentView(_ contentViewHandler: @escaping (UIView) -> Void)
     var state: State! { get set }
 }
+
 
 enum SheetType {
     case View

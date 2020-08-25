@@ -15,7 +15,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +35,8 @@ class ViewController: UIViewController {
         })
         bottomSheet.addNavigationBar() { navigationBar in
             self.makeNavigationBarWithSearchBarView(navigationBar: navigationBar)
-            return 70
+            navigationBar.isTranslucent = true
+            return 58
         }
 
         bottomSheet.addTableView({(tableView, scrollView) in
@@ -44,18 +45,18 @@ class ViewController: UIViewController {
             tableView.dataSource = self
         })
         bottomSheet.isExpandableToFullHeight = true
-        bottomSheet.initialHeight = .adjustWithTableviewContent
+        bottomSheet.initialHeight = .adjustWithContent
         bottomSheet.isClosable = false
         bottomSheet.delegate = self
         bottomSheet.enableClipToBar = true
         bottomSheet.showSheet()
-        bottomSheet.state = .BarOnlyPresented
+//        bottomSheet.state = .BarOnlyPresented
     }
     
     @objc func onPresent() {
         bottomSheet.state = .FullPresented
     }
-    
+
     @IBAction func onShow2(_ sender: Any) {
         bottomSheet = ZBottomSheet.Controller(parent: self)
         let placement = makeParentView()
@@ -66,19 +67,24 @@ class ViewController: UIViewController {
             v.layer.shadowOffset = CGSize(width: 0, height: 0)
             v.layer.shadowRadius = 2
             v.layer.shadowOpacity = 1
+            
+            v.addSubview(self.makeHandleView())
         })
         bottomSheet.addNavigationBar() { navigationBar in
+            
             let rightItem = UIBarButtonItem(title: "Present", style: .done, target: self, action: #selector(self.onPresent))
+//            navigationBar.setBackgroundImage(UIImage(), for: .default)
+            navigationBar.isTranslucent = false
             navigationBar.setItems([UINavigationItem(title: "Simple View")], animated: true)
             navigationBar.topItem?.rightBarButtonItem = rightItem
 //            navigationBar.setValue(true, forKey: "hidesShadow")
-            navigationBar.barTintColor = .white
+//            navigationBar.barTintColor = .clear
 
-            return 45
+            return 60
         }
 
         bottomSheet.addContentView({content in
-            content.backgroundColor = .white
+            content.backgroundColor =  .white
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 45))
             button.translatesAutoresizingMaskIntoConstraints = true
             button.backgroundColor = .systemBlue
@@ -205,7 +211,7 @@ extension ViewController {
         let v = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 6))
         v.layer.cornerRadius = v.frame.height / 2.0
         v.backgroundColor = .lightGray
-        v.center = CGPoint(x: self.view.frame.width / 2.0 , y: 8)
+        v.center = CGPoint(x: self.view.frame.width / 2.0 , y: 6)
         return v
     }
     
@@ -215,7 +221,6 @@ extension ViewController {
         ui.layer.cornerRadius = 10
         ui.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         ui.layer.masksToBounds = true
-        ui.addSubview(makeHandleView())
         return ui
     }
     
