@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZBottomSheet'
-  s.version          = '0.5.0'
+  s.version          = '1.0.0'
   s.summary          = 'BottomSheet is simple to use bottom sheet for iOS.'
 
 # This description is used to generate tags and improve search results.

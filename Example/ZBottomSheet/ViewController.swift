@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         bottomSheet.addNavigationBar() { navigationBar in
             self.makeNavigationBarWithSearchBarView(navigationBar: navigationBar)
             navigationBar.isTranslucent = true
-            return 58
+            return 58 // return height of navigation bar
         }
 
         bottomSheet.addTableView({(tableView, scrollView) in
