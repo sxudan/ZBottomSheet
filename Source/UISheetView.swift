@@ -107,6 +107,11 @@ public class UISheetView: UIView, BottomSheetModel {
     
     public func addNavigationBar(_ navigationBarHandler: (UINavigationBar) -> CGFloat) {
 
+        if self.placementView == nil {
+            print("_____ Error: Please add a bottomSheet view first ______")
+            return
+        }
+        
         let bar = UINavigationBar()
         self.placementView.addSubview(bar)
         bar.translatesAutoresizingMaskIntoConstraints = false
@@ -168,6 +173,10 @@ public class UISheetView: UIView, BottomSheetModel {
     }
     
     public func addScrollView(_ scrollViewHandler: (UIScrollView) -> Void) {
+        if self.placementView == nil {
+            print("_____ Error: Please add a bottomSheet view first ______")
+            return
+        }
         self.clearAll()
         let scrollview = UIScrollView(frame: .zero)
         scrollview.restorationIdentifier = "scrollview"
@@ -408,6 +417,11 @@ public class UISheetView: UIView, BottomSheetModel {
     
     public func addContentView(_ contentViewHandler: @escaping (UIView) -> Void) {
         
+        if self.placementView == nil {
+            print("_____ Error: Please add a bottomSheet view first ______")
+            return
+        }
+        
         self.clearAll()
         
         let content = UIView(frame: .infinite)
@@ -511,7 +525,8 @@ public class UISheetView: UIView, BottomSheetModel {
         visualEffectView.backgroundColor = UIColor.lightGray.withAlphaComponent(0)
         visualEffectView.frame = bounds!
         visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
+        visualEffectView.clipsToBounds = view .clipsToBounds
+        visualEffectView.layer.cornerRadius = view.layer.cornerRadius
         self.insertSubview(visualEffectView, at: 0)
         
         self.placementView = placementView

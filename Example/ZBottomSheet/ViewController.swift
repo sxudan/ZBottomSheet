@@ -15,7 +15,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,18 +68,14 @@ class ViewController: UIViewController {
             v.layer.shadowRadius = 2
             v.layer.shadowOpacity = 1
             
-            v.addSubview(self.makeHandleView())
+//            v.addSubview(self.makeHandleView())
         })
         bottomSheet.addNavigationBar() { navigationBar in
             
             let rightItem = UIBarButtonItem(title: "Present", style: .done, target: self, action: #selector(self.onPresent))
-//            navigationBar.setBackgroundImage(UIImage(), for: .default)
             navigationBar.isTranslucent = false
             navigationBar.setItems([UINavigationItem(title: "Simple View")], animated: true)
             navigationBar.topItem?.rightBarButtonItem = rightItem
-//            navigationBar.setValue(true, forKey: "hidesShadow")
-//            navigationBar.barTintColor = .clear
-
             return 60
         }
 
@@ -218,7 +214,7 @@ extension ViewController {
     func makeParentView() -> UIView {
         let ui = UIView(frame: .infinite)
         ui.backgroundColor = .white
-        ui.layer.cornerRadius = 10
+        ui.layer.cornerRadius = 40
         ui.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         ui.layer.masksToBounds = true
         return ui
