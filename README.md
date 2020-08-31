@@ -32,7 +32,7 @@ ZBottomSheet is available under the MIT license. See the LICENSE file for more i
 </br>
 <b> Type: Controller </b>
 </br></br>
-<img src="https://user-images.githubusercontent.com/31989781/91003183-62293180-e5f0-11ea-8e4c-7379e0db3223.gif" width="320" > 
+<img src="https://user-images.githubusercontent.com/31989781/91684707-ec850e80-eb77-11ea-8622-88c90eba4b9f.gif" width="320" > 
 </br>
 <img src="https://user-images.githubusercontent.com/31989781/91004110-fdbba180-e5f2-11ea-8b3a-5b1ad3478952.gif" width="320" > 
 </br></br></br>
